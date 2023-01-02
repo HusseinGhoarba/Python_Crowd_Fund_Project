@@ -1,2 +1,2 @@
 # Python_Crowd_Fund_Project
-Python Scripting ---> for C
+Python Scripting ---> for Crowd Funding Project
