@@ -51,9 +51,17 @@ def editproj():
             rewrite = open('data.json', 'w')
             json.dump(read_data, rewrite, indent=6 )
             rewrite.close()
+            print(f"{Fore.GREEN}------Project Deleted------{Fore.RESET}")
+            break
+    else: 
+        print(f"{Fore.RED}------Entery Not Found------{Fore.RESET}")
     proj_file.close()
 
-
+    #--------------------Rechoosing From Login Options----------------------
+    from loginoptions import listing_options, userchoose, choose_from
+    listing_options()
+    userchoose()
+    choose_from() 
     
 #--------------------------------------------------------------------------------
 
@@ -64,4 +72,8 @@ def delete_actions():
     if choosed == 1 :
         editproj()
     elif choosed == 2 :
-        quit
+        #--------------------Rechoosing From Login Options----------------------
+        from loginoptions import listing_options, userchoose, choose_from
+        listing_options()
+        userchoose()
+        choose_from() 

@@ -18,27 +18,28 @@ def listing_options():
 #-------------------------------CALLING FUNCTION--------------------------------------
 listing_options()
 #-------------------------------USER CHOOSE OPTION------------------------------------
-
-login_choose = input("Your Choice: ")
-while True:
-    if login_choose.isdigit():
-        login_choose = int(login_choose)
-        break
-    else:
-        print (f"{Fore.RED}*WRONG ENTERY ..... PLEASE ADD ONLY NUMBER*{Fore.RESET}")
-        listing_options()
-        login_choose = input("Your Choice :")
-    
-while True:
-    if int(login_choose) in [1, 2, 3, 4, 5, 6]:
-        break
-    else:
-        print (f"{Fore.RED}*WRONG ENTERY ..... PLEASE ADD ONE NUMBER FROM THE FOLLOWING LIST*{Fore.RESET}")
-        listing_options()
-        login_choose = input("Your Choice :")  
+def userchoose():
+    global login_choose
+    login_choose = input("Your Choice: ")
+    while True:
+        if login_choose.isdigit():
+            login_choose = int(login_choose)
+            break
+        else:
+            print (f"{Fore.RED}*WRONG ENTERY ..... PLEASE ADD ONLY NUMBER*{Fore.RESET}")
+            listing_options()
+            login_choose = input("Your Choice :")
+        
+    while True:
+        if int(login_choose) in [1, 2, 3, 4, 5, 6]:
+            break
+        else:
+            print (f"{Fore.RED}*WRONG ENTERY ..... PLEASE ADD ONE NUMBER FROM THE FOLLOWING LIST*{Fore.RESET}")
+            listing_options()
+            login_choose = input("Your Choice: ")  
 
 #--------------------------------------------------------------------------------------------------------
-
+userchoose()
 #--------------------------------------------------------------------------------------------------------
 def choose_from():
     login.usr_valid_email
@@ -59,7 +60,7 @@ def choose_from():
         delproj.delete_actions()
     #----------------------------------------------
     elif login_choose == 5 :
-        print(f"{Fore.GREEN}------Searchin for Project------{Fore.RESET}")
+        print(f"{Fore.GREEN}------Searching for Project------{Fore.RESET}")
         searching.searchproj()
     #----------------------------------------------
     elif login_choose == 6 :

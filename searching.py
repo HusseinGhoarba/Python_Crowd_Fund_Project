@@ -8,8 +8,8 @@ usermail = login.usr_valid_email
 #--------------------------------------------------------------------------------
 #---------------------------DEFINE FUNCTION-------------------------------------
 def searchproj():
-    searchstart = chk.date_validate("Project Start Date: ")
-    searchend = chk.date_validate("Project End Date: ")
+    searchstart = chk.date_validate("Project Start Date")
+    searchend = chk.date_validate("Project End Date")
     proj_file = open("data.json",'r')
     read_data = json.load(proj_file)
     i = 0 
@@ -20,5 +20,13 @@ def searchproj():
                 for elem in Proj_Meta[1:] :
                     print(f"{elem} --------> {read_data['User_Projects'][i][elem]}")
                     print(f"{Fore.BLUE}----------------------{Fore.RESET}")
+            else:
+                if i == (len(read_data["User_Projects"])-1):
+                    print(f"{Fore.RED}-----Project Not Found------{Fore.RESET}")
         i += 1
 #--------------------------------------------------------------------------------
+    #--------------------Rechoosing From Login Options----------------------
+    from loginoptions import listing_options, userchoose, choose_from
+    listing_options()
+    userchoose()
+    choose_from() 

@@ -65,12 +65,18 @@ def editproj(idfield , newvalue, thirdarg="None", newvaluetwo="None"):
                 print("--------------------------")
             else:
                 read_data['User_Projects'][item][thirdarg] = newvaluetwo
-                
             rewrite = open('data.json', 'w')
             json.dump(read_data, rewrite, indent=6 )
             rewrite.close()
-    proj_file.close()
+            print(f"{Fore.GREEN}------Edited Successfully------{Fore.RESET}")
     
+        
+    proj_file.close()
+    #--------------------Rechoosing From Login Options----------------------
+    from loginoptions import listing_options, userchoose, choose_from
+    listing_options()
+    userchoose()
+    choose_from() 
     
 #--------------------------------------------------------------------------------
 
@@ -80,7 +86,7 @@ def edit_actions():
     choosed = edit_list()
     if choosed == 1 :
         field = "Project_Title"
-        editval = chk.name_add("New Title of Project")
+        editval = chk.name_add("new project_title ")
         editproj(field , editval)
     elif choosed == 2 :
         field = "Project_Details"
@@ -95,4 +101,8 @@ def edit_actions():
         editval = get_date()
         editproj(field[0] , editval[0], field[1], editval[1])
     elif choosed == 5 :
-            quit
+        #--------------------Rechoosing From Login Options----------------------
+        from loginoptions import listing_options, userchoose, choose_from
+        listing_options()
+        userchoose()
+        choose_from() 
