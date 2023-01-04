@@ -1,3 +1,5 @@
+#------------------------- RUN ---> MainScript.py --> to run Project---------------------------
+
 from colorama import Fore
 import login
 import values
@@ -10,34 +12,27 @@ login_choose = ""
 #------------------------------LISTING OPTIONS---------------------------------------
 def listing_options():
     
-    print(f"{Fore.LIGHTBLACK_EX} Please Choose Number from list {Fore.RESET}")
+    print(f"{Fore.LIGHTBLACK_EX}***Choose Number from list {Fore.RESET}")
     
     options = ("View Projects","Create Project","Edit Project","Delete Project","Project Search Using Project_Dates", "Cancel")
     for count, i in enumerate(options, 1):
-        print(f"{count} ----> {i}")
+        print(f"{Fore.LIGHTCYAN_EX}{count} ----> {i}{Fore.RESET}")
+    print(f"{Fore.LIGHTBLACK_EX}--------------------------------------{Fore.RESET}")
+
 #-------------------------------CALLING FUNCTION--------------------------------------
 listing_options()
 #-------------------------------USER CHOOSE OPTION------------------------------------
 def userchoose():
     global login_choose
-    login_choose = input("Your Choice: ")
+    login_choose = input(f"{Fore.BLUE}Your Choice: {Fore.RESET}") 
     while True:
-        if login_choose.isdigit():
+        if login_choose.isdigit() and int(login_choose) in [1, 2, 3, 4, 5, 6]:
             login_choose = int(login_choose)
             break
         else:
-            print (f"{Fore.RED}*WRONG ENTERY ..... PLEASE ADD ONLY NUMBER*{Fore.RESET}")
+            print (f"{Fore.RED}*WRONG ENTERY ..... ADD ONE NUMBER FROM THE FOLLOWING LIST*{Fore.RESET}")
             listing_options()
-            login_choose = input("Your Choice :")
-        
-    while True:
-        if int(login_choose) in [1, 2, 3, 4, 5, 6]:
-            break
-        else:
-            print (f"{Fore.RED}*WRONG ENTERY ..... PLEASE ADD ONE NUMBER FROM THE FOLLOWING LIST*{Fore.RESET}")
-            listing_options()
-            login_choose = input("Your Choice: ")  
-
+            login_choose = input(f"{Fore.BLUE}Your Choice: {Fore.RESET}") 
 #--------------------------------------------------------------------------------------------------------
 userchoose()
 #--------------------------------------------------------------------------------------------------------
@@ -67,3 +62,5 @@ def choose_from():
         quit
 #-------------------------------------------------------------------
 choose_from()
+
+#------------FINAL VERSION V2.0.1

@@ -1,3 +1,5 @@
+#------------------------- RUN ---> MainScript.py --> to run Project---------------------------
+
 from colorama import Fore
 import constrains as chk
 import time
@@ -6,32 +8,24 @@ from values import Proj_Meta
 import json
 #-------------------------------Edit Options FUNCTION--------------------------------------
 def delete_options():
-    print(f"{Fore.LIGHTBLACK_EX}*CHOOSE FIELD NUMBER FOR EDITING ----- :{Fore.RESET}")
+    print(f"{Fore.LIGHTBLACK_EX}*CHOOSE FIELD NUMBER FOR DELETING ----- :{Fore.RESET}")
     options = ("Delete Project", "Cancel")
     for count, i in enumerate(options, 1):
-        print(f"{count} ----> {i}")
-
+        print(f"{Fore.CYAN}{count} ----> {i}{Fore.RESET}")
+    print(f"{Fore.LIGHTBLACK_EX}--------------------------------------{Fore.RESET}")
 #-------------------------------USER CHOOSE OPTION------------------------------------
 def delete_list():
     delete_options()
-    user_input = input("Your Choice :")
+    user_input = input(f"{Fore.BLUE}Your Choice: {Fore.RESET}")
     while True:
-        if user_input.isdigit():
+        if user_input.isdigit() and int(user_input) in [1, 2]:
             user_input = int(user_input)
-            break
-        else:
-            print (f"{Fore.RED}*WRONG ENTERY ..... PLEASE ADD ONLY NUMBER*{Fore.RESET}")
-            delete_options()
-            user_input = input("Your Choice :")
-    
-    while True:
-        if int(user_input) in [1, 2]:
             break
         else:
             print (f"{Fore.RED}*WRONG ENTERY ..... PLEASE ADD ONE NUMBER FROM THE FOLLOWING LIST*{Fore.RESET}")
             delete_options()
-            user_input = input("Your Choice: ")
-              
+            user_input = input(f"{Fore.BLUE}Your Choice: {Fore.RESET}")
+            
     return user_input
 #--------------------------------------------------------------------------------------------------------
 
@@ -77,3 +71,5 @@ def delete_actions():
         listing_options()
         userchoose()
         choose_from() 
+        
+#------------FINAL VERSION V2.0.1

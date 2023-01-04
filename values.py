@@ -1,3 +1,5 @@
+#------------------------- RUN ---> MainScript.py --> to run Project---------------------------
+
 import json
 import constrains as chk
 import time
@@ -12,7 +14,7 @@ def values(usr_valid_email):
     #---------------------------------------------
     title_name = chk.name_add("Project Title")
     #---------------------------------------------
-    Details = input("Add Your Project Details: ")
+    Details = input(f"{Fore.LIGHTYELLOW_EX}Add Your Project Details: {Fore.RESET}")
     #----------------------------------------------
     target_fund = chk.confirm_number("Funding Total Target in $ currency: ")
     #----------------------------------------------
@@ -48,9 +50,17 @@ def values(usr_valid_email):
     data["User_Projects"].append(Project)
     proj_file.seek(0)
     json.dump(data, proj_file, indent = 6)
+    proj_file.close()
     #-----------------------------------------------------------------------------------
     print(f"{Fore.GREEN}-----------------Project DATA----------------{Fore.RESET}\n")
     for elem in Proj_Meta[1:] :
-        print(f"{elem} -------> {Project[elem]}\n")
+        print(f"{Fore.LIGHTBLACK_EX}{elem} -------> {Project[elem]}{Fore.RESET}\n")
     print(f"{Fore.GREEN}---------Project Created Succesfully---------{Fore.RESET}\n")
     #------------------------------------------------------------------------------------
+    #--------------------Rechoosing From Login Options----------------------
+    from loginoptions import listing_options, userchoose, choose_from
+    listing_options()
+    userchoose()
+    choose_from() 
+    
+#Finall Version v2.0.1

@@ -1,3 +1,5 @@
+#------------------------- RUN ---> MainScript.py --> to run Project---------------------------
+
 import login
 from values import Proj_Meta
 import json
@@ -10,12 +12,19 @@ def viewproj():
     proj_file = open("data.json",'r')
     read_data = json.load(proj_file)
     i = 0 
+    proj_counter = 0
     while i < len(read_data["User_Projects"]):
         if read_data['User_Projects'][i]["User_Email"] == usermail :
+            proj_counter += 1 
+            print(f"{Fore.YELLOW}************************************{Fore.RESET}")
+            print(f"{Fore.YELLOW}             Project({proj_counter}){Fore.RESET}")
             print(f"{Fore.YELLOW}************************************{Fore.RESET}")
             for elem in Proj_Meta[1:] :
                 print(f"{elem} --------> {read_data['User_Projects'][i][elem]}")
                 print(f"{Fore.BLUE}----------------------{Fore.RESET}")
+        else:
+            if i == (len(read_data["User_Projects"])-1):
+                print(f"{Fore.RED}\n----- There is No Project Yet -----\n{Fore.RESET}")
         i += 1
     #--------------------Rechoosing From Login Options----------------------
     from loginoptions import listing_options, userchoose, choose_from
@@ -23,3 +32,5 @@ def viewproj():
     userchoose()
     choose_from() 
 #--------------------------------------------------------------------------------
+
+#------------FINAL VERSION V2.0.1

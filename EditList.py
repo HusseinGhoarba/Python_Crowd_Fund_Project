@@ -1,3 +1,5 @@
+#------------------------- RUN ---> MainScript.py --> to run Project---------------------------
+
 from colorama import Fore
 import constrains as chk
 import time
@@ -9,29 +11,21 @@ def edit_options():
     print(f"{Fore.LIGHTBLACK_EX}*CHOOSE FIELD NUMBER FOR EDITING ----- :{Fore.RESET}")
     options = ("Project Title","Project Details","Project Total Fund", "Project Dates", "Cancel")
     for count, i in enumerate(options, 1):
-        print(f"{count} ----> {i}")
-
+        print(f"{Fore.CYAN}{count} ----> {i}{Fore.RESET}")
+    print(f"{Fore.LIGHTBLACK_EX}--------------------------------------{Fore.RESET}")
 #-------------------------------USER CHOOSE OPTION------------------------------------
 def edit_list():
     edit_options()
-    user_input = input("Your Choice :")
+    user_input = input(f"{Fore.BLUE}Your Choice: {Fore.RESET}")
     while True:
-        if user_input.isdigit():
+        if user_input.isdigit() and int(user_input) in [1, 2, 3, 4, 5]:
             user_input = int(user_input)
-            break
-        else:
-            print (f"{Fore.RED}*WRONG ENTERY ..... PLEASE ADD ONLY NUMBER*{Fore.RESET}")
-            edit_options()
-            user_input = input("Your Choice :")
-    
-    while True:
-        if int(user_input) in [1, 2, 3, 4, 5]:
             break
         else:
             print (f"{Fore.RED}*WRONG ENTERY ..... PLEASE ADD ONE NUMBER FROM THE FOLLOWING LIST*{Fore.RESET}")
             edit_options()
-            user_input = input("Your Choice: ")
-              
+            user_input = input(f"{Fore.BLUE}Your Choice: {Fore.RESET}")
+
     return user_input
 #--------------------------------------------------------------------------------------------------------
 def get_date():
@@ -97,7 +91,7 @@ def edit_actions():
         editval = chk.confirm_number("New Total Fund")
         editproj(field , editval)
     elif choosed == 4:
-        field = ["Project_Start_Date", "Project_End_Date"]
+        field = ["New Project_Start_Date", "New Project_End_Date"]
         editval = get_date()
         editproj(field[0] , editval[0], field[1], editval[1])
     elif choosed == 5 :
@@ -106,3 +100,5 @@ def edit_actions():
         listing_options()
         userchoose()
         choose_from() 
+        
+#------------FINAL VERSION V2.0.1
