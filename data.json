@@ -1,0 +1,100 @@
+{
+      "User_Projects": [
+            {
+                  "User_Email": "hu@iti.com",
+                  "Project_Title": "hussein",
+                  "Project_Details": "hussein ghoraba funds",
+                  "Project_Target": "25000",
+                  "Project_Start_Date": "1/6/2023",
+                  "Project_End_Date": "1/1/2024"
+            },
+            {
+                  "User_Email": "hu@iti.com",
+                  "Project_Title": "jojo",
+                  "Project_Details": "jojo bobobo momo",
+                  "Project_Target": "235000",
+                  "Project_Start_Date": "1/1/2004",
+                  "Project_End_Date": "1/1/2005"
+            },
+            {
+                  "User_Email": "hu@iti.com",
+                  "Project_Title": "hasona",
+                  "Project_Details": "lolooo kookokok",
+                  "Project_Target": "650005",
+                  "Project_Start_Date": "24/1/2010",
+                  "Project_End_Date": "24/1/2012"
+            },
+            {
+                  "User_Email": "mo@iti.com",
+                  "Project_Title": "HUSSEIN",
+                  "Project_Details": "amr ghoraba",
+                  "Project_Target": "55555",
+                  "Project_Start_Date": "11/11/2012",
+                  "Project_End_Date": "12/11/2012"
+            },
+            {
+                  "User_Email": "mo@iti.com",
+                  "Project_Title": "kareemo",
+                  "Project_Details": "kareem",
+                  "Project_Target": "123400",
+                  "Project_Start_Date": "1/2/2002",
+                  "Project_End_Date": "1/2/2003"
+            },
+            {
+                  "User_Email": "bebo@iti.com",
+                  "Project_Title": "kimo",
+                  "Project_Details": "kimo w alsheko",
+                  "Project_Target": "255555",
+                  "Project_Start_Date": "1/1/2020",
+                  "Project_End_Date": "1/1/2021"
+            },
+            {
+                  "User_Email": "gh@iti.com",
+                  "Project_Title": "samiro",
+                  "Project_Details": "samsemo",
+                  "Project_Target": "234000",
+                  "Project_Start_Date": "1/1/2010",
+                  "Project_End_Date": "1/1/2015"
+            },
+            {
+                  "User_Email": "hg@iti.com",
+                  "Project_Title": "husseingh",
+                  "Project_Details": "hussein ghoraba",
+                  "Project_Target": "240000",
+                  "Project_Start_Date": "1/1/2005",
+                  "Project_End_Date": "1/1/2006"
+            },
+            {
+                  "User_Email": "hg@iti.com",
+                  "Project_Title": "jamal",
+                  "Project_Details": "ghoraba",
+                  "Project_Target": "290000",
+                  "Project_Start_Date": "1/1/2016",
+                  "Project_End_Date": "1/1/2019"
+            },
+            {
+                  "User_Email": "hg@iti.com",
+                  "Project_Title": "younis",
+                  "Project_Details": "ghoraba",
+                  "Project_Target": "120000",
+                  "Project_Start_Date": "1/1/2022",
+                  "Project_End_Date": "1/1/2120"
+            },
+            {
+                  "User_Email": "hg@iti.com",
+                  "Project_Title": "ehda",
+                  "Project_Details": "ehda ya bro",
+                  "Project_Target": "232323",
+                  "Project_Start_Date": "1/1/2020",
+                  "Project_End_Date": "12/1/2020"
+            },
+            {
+                  "User_Email": "hg@iti.com",
+                  "Project_Title": "broo",
+                  "Project_Details": "brooo",
+                  "Project_Target": "123000",
+                  "Project_Start_Date": "1/1/2022",
+                  "Project_End_Date": "1/12/2022"
+            }
+      ]
+}
