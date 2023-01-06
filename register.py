@@ -8,7 +8,7 @@ from colorama import Fore
 def registeraction():
     fname = chk.name_add("first")
     lname = chk.name_add("last")
-    email = chk.email_add()
+    email = chk.MailCheckExistance()
     password = chk.add_pass()
     confirmpass = str(chk.confirm_pass(password))
     numberph = chk.phone_number()

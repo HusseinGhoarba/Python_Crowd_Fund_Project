@@ -12,7 +12,7 @@ Proj_Meta = [ "User_Email" ,"Project_Title"  , "Project_Details" , "Project_Targ
 def values(usr_valid_email):
     global Proj_Meta
     #---------------------------------------------
-    title_name = chk.name_add("Project Title")
+    title_name = chk.TitleCheckExistance("Project Title")
     #---------------------------------------------
     Details = input(f"{Fore.LIGHTYELLOW_EX}Add Your Project Details: {Fore.RESET}")
     #----------------------------------------------
@@ -63,4 +63,4 @@ def values(usr_valid_email):
     userchoose()
     choose_from() 
     
-#Finall Version v2.0.1
+#Finall Version v2.0.2

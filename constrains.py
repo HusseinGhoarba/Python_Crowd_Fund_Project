@@ -1,6 +1,9 @@
 #------------------------- RUN ---> MainScript.py --> to run Project---------------------------
-
+import login
 from colorama import Fore
+import maskpass
+import json
+
 #Check Constraints Files -------->
 def name_add(hell):
   inputs = input(f"{Fore.LIGHTYELLOW_EX}Add {hell} name: {Fore.RESET}")
@@ -25,23 +28,23 @@ def email_add():
     return email
 
 def add_pass():
-    added = input(f"{Fore.LIGHTYELLOW_EX}Enter Password: {Fore.RESET}")
+    added = maskpass.askpass(prompt= f"{Fore.LIGHTYELLOW_EX}Enter Password: {Fore.RESET}", mask="*")
     while True:
         if len(added) > 0 :
             break
         else:
-            print("*Password Doesn't Match")
-            added = input(f"{Fore.LIGHTYELLOW_EX}Enter Password: {Fore.RESET}")
+            print("*Password can't be empty")
+            added = maskpass.askpass(prompt= f"{Fore.LIGHTYELLOW_EX}Enter Password: {Fore.RESET}", mask="*")
     return added
 
 def confirm_pass(givenpass):
-    confpass = input(f"{Fore.LIGHTYELLOW_EX}Re-enter Password: {Fore.RESET}")
+    confpass = maskpass.askpass(prompt= f"{Fore.LIGHTYELLOW_EX}Re_enter Password: {Fore.RESET}", mask="*")
     while True:
         if confpass == givenpass:
             break
         else:
             print("*Password Doesn't Match")
-            confpass = input(f"{Fore.LIGHTYELLOW_EX}Re-enter Password: {Fore.RESET}")
+            confpass = maskpass.askpass(prompt= f"{Fore.LIGHTYELLOW_EX}Re_enter Password: {Fore.RESET}", mask="*")
     return confpass
 
 def confirm_number(target):
@@ -78,4 +81,36 @@ def phone_number():
             phone = input(f"{Fore.LIGHTYELLOW_EX}Phone Number[Egypt]: {Fore.RESET}")
     return phone
 
-#------------FINAL VERSION V2.0.1
+#check mail existance --------------------------------------------------------------------
+def MailCheckExistance():
+    mail = email_add()
+    userdataf = open("userdata.txt", "r")
+    for i in userdataf:
+        userinfos = i.strip('\n')
+        userinfos = userinfos.split(":")
+        while True:
+            if userinfos[2] != mail:
+                break
+            else:
+                print(f"{Fore.RED}----------------Mail Exist before-----------------------{Fore.RESET}")
+                mail = email_add()
+    userdataf.close()
+    return mail
+
+def TitleCheckExistance(titlename):
+    usermail = login.usr_valid_email
+    title = name_add(titlename)
+    proj_file = open("data.json",'r')
+    read_data = json.load(proj_file)
+    x = 0
+    while x < len(read_data["User_Projects"]):
+        i = 0
+        if read_data['User_Projects'][x]["User_Email"] == usermail :
+            while i < 6:
+                if read_data['User_Projects'][i]["Project_Title"] == title:
+                    print(f"{Fore.RED}----- There is a same title for other project -----{Fore.RESET}")
+                    title = name_add(titlename)   
+                i+=1
+        x+=1
+    return title
+#------------FINAL VERSION V2.0.2

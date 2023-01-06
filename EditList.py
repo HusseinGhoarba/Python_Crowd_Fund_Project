@@ -63,8 +63,6 @@ def editproj(idfield , newvalue, thirdarg="None", newvaluetwo="None"):
             json.dump(read_data, rewrite, indent=6 )
             rewrite.close()
             print(f"{Fore.GREEN}------Edited Successfully------{Fore.RESET}")
-    
-        
     proj_file.close()
     #--------------------Rechoosing From Login Options----------------------
     from loginoptions import listing_options, userchoose, choose_from
@@ -80,7 +78,7 @@ def edit_actions():
     choosed = edit_list()
     if choosed == 1 :
         field = "Project_Title"
-        editval = chk.name_add("new project_title ")
+        editval = chk.TitleCheckExistance("new project_title")
         editproj(field , editval)
     elif choosed == 2 :
         field = "Project_Details"

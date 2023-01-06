@@ -13,8 +13,10 @@ def viewproj():
     read_data = json.load(proj_file)
     i = 0 
     proj_counter = 0
+    noproj_flag = 0 
     while i < len(read_data["User_Projects"]):
         if read_data['User_Projects'][i]["User_Email"] == usermail :
+            noproj_flag = 1
             proj_counter += 1 
             print(f"{Fore.YELLOW}************************************{Fore.RESET}")
             print(f"{Fore.YELLOW}             Project({proj_counter}){Fore.RESET}")
@@ -22,10 +24,11 @@ def viewproj():
             for elem in Proj_Meta[1:] :
                 print(f"{elem} --------> {read_data['User_Projects'][i][elem]}")
                 print(f"{Fore.BLUE}----------------------{Fore.RESET}")
-        else:
-            if i == (len(read_data["User_Projects"])-1):
-                print(f"{Fore.RED}\n----- There is No Project Yet -----\n{Fore.RESET}")
         i += 1
+        
+    if noproj_flag == 0 :
+        print(f"{Fore.RED}\n----- There is No Project -----\n{Fore.RESET}")
+
     #--------------------Rechoosing From Login Options----------------------
     from loginoptions import listing_options, userchoose, choose_from
     listing_options()
@@ -33,4 +36,4 @@ def viewproj():
     choose_from() 
 #--------------------------------------------------------------------------------
 
-#------------FINAL VERSION V2.0.1
+#------------FINAL VERSION V2.0.2

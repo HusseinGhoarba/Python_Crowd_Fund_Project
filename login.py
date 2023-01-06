@@ -4,6 +4,7 @@
 #Importing Required Libraries
 import constrains as chk
 from colorama import Fore
+import maskpass
 # import loginoptions as lnoptions
 #-----------------------------------LOGIN FUNCTION--------------------------------------------
 usr_valid_email = ""
@@ -11,7 +12,7 @@ def loginaction():
     #get information from user ---------------------------------------------------------------
     global usr_valid_email
     usremail = chk.email_add()
-    userpassword = input(f"{Fore.LIGHTYELLOW_EX}Enter Password: {Fore.RESET}")
+    userpassword = maskpass.askpass(prompt= f"{Fore.LIGHTYELLOW_EX}Enter Password: {Fore.RESET}", mask="*")
     #check user existance --------------------------------------------------------------------
     userdataf = open("userdata.txt", "r")
     for i in userdataf:
@@ -28,4 +29,4 @@ def loginaction():
         print(f"{Fore.RED}----------------Unsuccesfuly: User Not Found---------------------------{Fore.RESET}")
         import MainScript
     userdataf.close()
-#------------FINAL VERSION V2.0.1
+#------------FINAL VERSION V2.0.2
