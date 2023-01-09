@@ -89,7 +89,7 @@ def edit_actions():
         editval = chk.confirm_number("New Total Fund")
         editproj(field , editval)
     elif choosed == 4:
-        field = ["New Project_Start_Date", "New Project_End_Date"]
+        field = ["Project_Start_Date", "Project_End_Date"]
         editval = get_date()
         editproj(field[0] , editval[0], field[1], editval[1])
     elif choosed == 5 :
